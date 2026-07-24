@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">HMER DEMO</string>
+
+    <string name="brand_university_hmer">University HMER</string>
+    <string name="action_skip">Bỏ qua</string>
+    <string name="action_continue">Tiếp tục</string>
+    <string name="action_start_experience">Bắt đầu trải nghiệm</string>
+    <string name="action_start_with_sample">Bắt đầu với ảnh mẫu</string>
+
+    <string name="onboarding_problem_eyebrow">BÀI TOÁN THỰC TẾ</string>
+    <string name="onboarding_problem_title">Từ nét viết tay\nđến công thức số</string>
+    <string name="onboarding_problem_description">Biểu thức giải tích trong lớp học có nét viết, bố cục và độ phức tạp khác đáng kể so với dữ liệu benchmark.</string>
+    <string name="onboarding_sample_label">Mẫu biểu thức viết tay thực tế</string>
+    <string name="onboarding_pipeline">Ảnh viết tay → Nhận dạng cấu trúc → LaTeX</string>
+    <string name="onboarding_metric_real_images_value">1.636</string>
+    <string name="onboarding_metric_real_images_label">ảnh thực tế</string>
+    <string name="onboarding_metric_datasets_value">3</string>
+    <string name="onboarding_metric_datasets_label">tập dữ liệu</string>
+    <string name="onboarding_metric_blind_test_value">Blind</string>
+    <string name="onboarding_metric_blind_test_label">test độc lập</string>
+
+    <string name="onboarding_models_eyebrow">GIẢI PHÁP NGHIÊN CỨU</string>
+    <string name="onboarding_models_title">Hai hướng tiếp cận,\nhai thế mạnh</string>
+    <string name="onboarding_models_description">Cùng nhận dạng một biểu thức để quan sát trực tiếp sự đánh đổi giữa tốc độ và Exact Match.</string>
+    <string name="model_tamer_title">TAMER-A3</string>
+    <string name="model_tamer_badge">NHANH</string>
+    <string name="model_tamer_description">Mô hình HMER chuyên biệt, phù hợp tương tác gần thời gian thực.</string>
+    <string name="model_tamer_stats" formatted="false">71,17% ExpRate  ·  2,92% TER  ·  ~0,31 s</string>
+    <string name="model_unimumer_title">Uni-MuMER LoRA</string>
+    <string name="model_unimumer_action">Uni-MuMER</string>
+    <string name="model_unimumer_badge">EXACT MATCH</string>
+    <string name="model_unimumer_description">Mô hình thị giác-ngôn ngữ được thích nghi trên dữ liệu lớp học thực tế.</string>
+    <string name="model_unimumer_stats" formatted="false">74,82% ExpRate  ·  100% ValidLaTeX  ·  ~2,55 s</string>
+    <string name="onboarding_models_comparison">A3 ưu tiên tốc độ và TER; Uni-MuMER LoRA đạt Exact Match cao hơn. Không có một mô hình vượt trội trên mọi tiêu chí.</string>
+
+    <string name="onboarding_experience_eyebrow">TRẢI NGHIỆM NHẬN DẠNG</string>
+    <string name="onboarding_experience_title">Một ảnh,\nhai góc nhìn</string>
+    <string name="onboarding_experience_description">Ứng dụng giữ luồng thao tác ngắn gọn để kết quả mô hình là trung tâm của trải nghiệm.</string>
+    <string name="onboarding_step_select_image_title">Chụp hoặc chọn ảnh</string>
+    <string name="onboarding_step_select_image_description">Dùng camera, thư viện hoặc ảnh mẫu có sẵn.</string>
+    <string name="onboarding_step_crop_title">Cắt vùng công thức</string>
+    <string name="onboarding_step_crop_description">Chỉ giữ vùng biểu thức cần nhận dạng.</string>
+    <string name="onboarding_step_compare_title">So sánh kết quả</string>
+    <string name="onboarding_step_compare_description">Xem công thức render, LaTeX và latency.</string>
+    <string name="onboarding_demo_tip">Mẹo demo: bắt đầu bằng ảnh mẫu để làm nóng mô hình trước khi thử ảnh mới.</string>
+
+    <string name="navigation_overview">←  Tổng quan</string>
+    <string name="recognition_title">HMER Demo</string>
+    <string name="recognition_subtitle">Nhận dạng biểu thức toán viết tay → LaTeX</string>
+    <string name="action_take_photo">Chụp ảnh</string>
+    <string name="action_open_gallery">Thư viện</string>
+    <string name="action_use_sample">Dùng ảnh mẫu</string>
+    <string name="image_original_label">1. Ảnh gốc</string>
+    <string name="image_cropped_label">2. Ảnh sau khi cắt · đầu vào nhận dạng</string>
+    <string name="action_recrop">Cắt lại</string>
+    <string name="action_crop_formula">Cắt vùng công thức</string>
+    <string name="action_delete_image">Xóa ảnh</string>
+    <string name="image_input_empty">Chụp ảnh, chọn từ thư viện hoặc dùng ảnh mẫu</string>
+    <string name="image_not_cropped">Chưa cắt ảnh</string>
+    <string name="recognition_controls_title">Chạy nhận dạng</string>
+    <string name="action_compare_models">So sánh models</string>
+    <string name="recognition_loading">Đang nhận dạng công thức…</string>
+    <string name="recognition_results_title">Kết quả nhận dạng</string>
+    <string name="model_tamer_subtitle">Mô hình HMER chuyên biệt · Ưu tiên tốc độ</string>
+    <string name="model_unimumer_subtitle">Mô hình thị giác-ngôn ngữ · Ưu tiên Exact Match</string>
+    <string name="recognition_privacy_notice">Ảnh sau khi cắt được gửi tới máy chủ nhận dạng và không lưu sau khi xử lý</string>
+    <string name="result_empty">Chưa có kết quả</string>
+    <string name="result_latex_label">LaTeX đầu ra</string>
+    <string name="action_copy_latex">Sao chép LaTeX</string>
+    <string name="action_retry">Thử lại</string>
+    <string name="action_close">Đóng</string>
+
+    <string name="crop_toolbar_title">Cắt vùng công thức</string>
+    <string name="crop_failed_message">Không thể tạo ảnh sau khi cắt.</string>
+    <string name="crop_failed_suggestion">Thử cắt lại. Nếu lỗi tiếp tục, chụp lại phần thông báo này.</string>
+    <string name="crop_open_failed_message">Không thể mở công cụ cắt ảnh.</string>
+    <string name="crop_open_failed_suggestion">Thử chọn lại ảnh rồi cắt lại.</string>
+</resources>

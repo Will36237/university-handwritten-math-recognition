@@ -1,0 +1,2324 @@
+{
+  "tamer_model.decoder.decoder_adapter.down.bias": [
+    64
+  ],
+  "tamer_model.decoder.decoder_adapter.down.weight": [
+    64,
+    256
+  ],
+  "tamer_model.decoder.decoder_adapter.gate_logit": [],
+  "tamer_model.decoder.decoder_adapter.norm.bias": [
+    256
+  ],
+  "tamer_model.decoder.decoder_adapter.norm.weight": [
+    256
+  ],
+  "tamer_model.decoder.decoder_adapter.up.bias": [
+    256
+  ],
+  "tamer_model.decoder.decoder_adapter.up.weight": [
+    256,
+    64
+  ],
+  "tamer_model.decoder.exp_proj.bias": [
+    248
+  ],
+  "tamer_model.decoder.exp_proj.weight": [
+    248,
+    256
+  ],
+  "tamer_model.decoder.fusion.w_att.bias": [
+    256
+  ],
+  "tamer_model.decoder.fusion.w_att.weight": [
+    256,
+    512
+  ],
+  "tamer_model.decoder.fusion_proj.bias": [
+    248
+  ],
+  "tamer_model.decoder.fusion_proj.weight": [
+    248,
+    256
+  ],
+  "tamer_model.decoder.model.arm.conv.bias": [
+    32
+  ],
+  "tamer_model.decoder.model.arm.conv.weight": [
+    32,
+    16,
+    5,
+    5
+  ],
+  "tamer_model.decoder.model.arm.post_norm.bn.bias": [
+    8
+  ],
+  "tamer_model.decoder.model.arm.post_norm.bn.num_batches_tracked": [],
+  "tamer_model.decoder.model.arm.post_norm.bn.running_mean": [
+    8
+  ],
+  "tamer_model.decoder.model.arm.post_norm.bn.running_var": [
+    8
+  ],
+  "tamer_model.decoder.model.arm.post_norm.bn.weight": [
+    8
+  ],
+  "tamer_model.decoder.model.arm.proj.weight": [
+    8,
+    32,
+    1,
+    1
+  ],
+  "tamer_model.decoder.model.layers.0.linear1.bias": [
+    1024
+  ],
+  "tamer_model.decoder.model.layers.0.linear1.weight": [
+    1024,
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.linear2.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.linear2.weight": [
+    256,
+    1024
+  ],
+  "tamer_model.decoder.model.layers.0.multihead_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.model.layers.0.multihead_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.multihead_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.multihead_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.norm1.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.norm1.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.norm2.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.norm2.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.norm3.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.norm3.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.self_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.model.layers.0.self_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.self_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.0.self_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.linear1.bias": [
+    1024
+  ],
+  "tamer_model.decoder.model.layers.1.linear1.weight": [
+    1024,
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.linear2.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.linear2.weight": [
+    256,
+    1024
+  ],
+  "tamer_model.decoder.model.layers.1.multihead_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.model.layers.1.multihead_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.multihead_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.multihead_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.norm1.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.norm1.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.norm2.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.norm2.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.norm3.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.norm3.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.self_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.model.layers.1.self_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.self_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.1.self_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.linear1.bias": [
+    1024
+  ],
+  "tamer_model.decoder.model.layers.2.linear1.weight": [
+    1024,
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.linear2.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.linear2.weight": [
+    256,
+    1024
+  ],
+  "tamer_model.decoder.model.layers.2.multihead_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.model.layers.2.multihead_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.multihead_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.multihead_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.norm1.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.norm1.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.norm2.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.norm2.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.norm3.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.norm3.weight": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.self_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.model.layers.2.self_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.self_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.model.layers.2.self_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.norm.bias": [
+    256
+  ],
+  "tamer_model.decoder.norm.weight": [
+    256
+  ],
+  "tamer_model.decoder.pos_enc.pe": [
+    500,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.to_k.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.to_k.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.to_q.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.to_q.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.to_sim.1.bias": [
+    1
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.to_sim.1.weight": [
+    1,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.linear1.bias": [
+    1024
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.linear1.weight": [
+    1024,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.linear2.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.linear2.weight": [
+    256,
+    1024
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.norm1.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.norm1.weight": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.norm2.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.norm2.weight": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.self_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.self_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.self_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.l2r_struct_sim.trm.layers.0.self_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.to_k.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.to_k.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.to_q.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.to_q.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.to_sim.1.bias": [
+    1
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.to_sim.1.weight": [
+    1,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.linear1.bias": [
+    1024
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.linear1.weight": [
+    1024,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.linear2.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.linear2.weight": [
+    256,
+    1024
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.norm1.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.norm1.weight": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.norm2.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.norm2.weight": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.self_attn.in_proj_bias": [
+    768
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.self_attn.in_proj_weight": [
+    768,
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.self_attn.out_proj.bias": [
+    256
+  ],
+  "tamer_model.decoder.struct_sim.r2l_struct_sim.trm.layers.0.self_attn.out_proj.weight": [
+    256,
+    256
+  ],
+  "tamer_model.decoder.word_embed.0.weight": [
+    248,
+    256
+  ],
+  "tamer_model.decoder.word_embed.1.bias": [
+    256
+  ],
+  "tamer_model.decoder.word_embed.1.weight": [
+    256
+  ],
+  "tamer_model.encoder.feature_proj.bias": [
+    256
+  ],
+  "tamer_model.encoder.feature_proj.weight": [
+    256,
+    684,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.conv1.weight": [
+    48,
+    1,
+    7,
+    7
+  ],
+  "tamer_model.encoder.model.dense1.0.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.0.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.0.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.0.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.0.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.0.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.0.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.0.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.0.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.0.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.0.conv1.weight": [
+    96,
+    48,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.0.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.1.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.1.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.1.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.1.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.1.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.1.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.1.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.1.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.1.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.1.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.1.conv1.weight": [
+    96,
+    72,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.1.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.10.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.10.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.10.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.10.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.10.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.10.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.10.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.10.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.10.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.10.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.10.conv1.weight": [
+    96,
+    288,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.10.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.11.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.11.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.11.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.11.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.11.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.11.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.11.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.11.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.11.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.11.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.11.conv1.weight": [
+    96,
+    312,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.11.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.12.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.12.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.12.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.12.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.12.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.12.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.12.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.12.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.12.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.12.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.12.conv1.weight": [
+    96,
+    336,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.12.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.13.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.13.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.13.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.13.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.13.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.13.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.13.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.13.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.13.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.13.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.13.conv1.weight": [
+    96,
+    360,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.13.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.14.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.14.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.14.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.14.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.14.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.14.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.14.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.14.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.14.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.14.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.14.conv1.weight": [
+    96,
+    384,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.14.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.15.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.15.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.15.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.15.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.15.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.15.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.15.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.15.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.15.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.15.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.15.conv1.weight": [
+    96,
+    408,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.15.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.2.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.2.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.2.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.2.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.2.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.2.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.2.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.2.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.2.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.2.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.2.conv1.weight": [
+    96,
+    96,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.2.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.3.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.3.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.3.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.3.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.3.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.3.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.3.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.3.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.3.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.3.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.3.conv1.weight": [
+    96,
+    120,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.3.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.4.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.4.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.4.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.4.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.4.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.4.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.4.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.4.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.4.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.4.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.4.conv1.weight": [
+    96,
+    144,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.4.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.5.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.5.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.5.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.5.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.5.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.5.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.5.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.5.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.5.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.5.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.5.conv1.weight": [
+    96,
+    168,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.5.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.6.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.6.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.6.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.6.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.6.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.6.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.6.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.6.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.6.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.6.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.6.conv1.weight": [
+    96,
+    192,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.6.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.7.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.7.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.7.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.7.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.7.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.7.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.7.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.7.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.7.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.7.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.7.conv1.weight": [
+    96,
+    216,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.7.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.8.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.8.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.8.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.8.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.8.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.8.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.8.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.8.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.8.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.8.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.8.conv1.weight": [
+    96,
+    240,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.8.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense1.9.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.9.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.9.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.9.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.9.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense1.9.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.9.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense1.9.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.9.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.9.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense1.9.conv1.weight": [
+    96,
+    264,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense1.9.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.0.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.0.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.0.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.0.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.0.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.0.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.0.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.0.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.0.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.0.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.0.conv1.weight": [
+    96,
+    216,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.0.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.1.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.1.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.1.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.1.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.1.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.1.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.1.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.1.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.1.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.1.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.1.conv1.weight": [
+    96,
+    240,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.1.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.10.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.10.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.10.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.10.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.10.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.10.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.10.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.10.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.10.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.10.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.10.conv1.weight": [
+    96,
+    456,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.10.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.11.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.11.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.11.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.11.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.11.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.11.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.11.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.11.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.11.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.11.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.11.conv1.weight": [
+    96,
+    480,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.11.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.12.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.12.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.12.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.12.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.12.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.12.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.12.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.12.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.12.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.12.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.12.conv1.weight": [
+    96,
+    504,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.12.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.13.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.13.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.13.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.13.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.13.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.13.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.13.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.13.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.13.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.13.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.13.conv1.weight": [
+    96,
+    528,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.13.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.14.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.14.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.14.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.14.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.14.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.14.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.14.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.14.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.14.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.14.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.14.conv1.weight": [
+    96,
+    552,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.14.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.15.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.15.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.15.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.15.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.15.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.15.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.15.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.15.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.15.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.15.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.15.conv1.weight": [
+    96,
+    576,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.15.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.2.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.2.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.2.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.2.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.2.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.2.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.2.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.2.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.2.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.2.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.2.conv1.weight": [
+    96,
+    264,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.2.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.3.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.3.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.3.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.3.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.3.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.3.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.3.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.3.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.3.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.3.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.3.conv1.weight": [
+    96,
+    288,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.3.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.4.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.4.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.4.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.4.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.4.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.4.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.4.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.4.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.4.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.4.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.4.conv1.weight": [
+    96,
+    312,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.4.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.5.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.5.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.5.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.5.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.5.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.5.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.5.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.5.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.5.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.5.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.5.conv1.weight": [
+    96,
+    336,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.5.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.6.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.6.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.6.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.6.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.6.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.6.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.6.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.6.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.6.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.6.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.6.conv1.weight": [
+    96,
+    360,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.6.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.7.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.7.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.7.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.7.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.7.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.7.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.7.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.7.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.7.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.7.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.7.conv1.weight": [
+    96,
+    384,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.7.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.8.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.8.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.8.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.8.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.8.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.8.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.8.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.8.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.8.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.8.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.8.conv1.weight": [
+    96,
+    408,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.8.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense2.9.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.9.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.9.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.9.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.9.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense2.9.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.9.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense2.9.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.9.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.9.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense2.9.conv1.weight": [
+    96,
+    432,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense2.9.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.0.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.0.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.0.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.0.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.0.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.0.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.0.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.0.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.0.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.0.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.0.conv1.weight": [
+    96,
+    300,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.0.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.1.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.1.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.1.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.1.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.1.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.1.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.1.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.1.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.1.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.1.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.1.conv1.weight": [
+    96,
+    324,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.1.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.10.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.10.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.10.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.10.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.10.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.10.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.10.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.10.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.10.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.10.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.10.conv1.weight": [
+    96,
+    540,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.10.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.11.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.11.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.11.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.11.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.11.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.11.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.11.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.11.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.11.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.11.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.11.conv1.weight": [
+    96,
+    564,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.11.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.12.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.12.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.12.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.12.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.12.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.12.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.12.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.12.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.12.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.12.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.12.conv1.weight": [
+    96,
+    588,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.12.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.13.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.13.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.13.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.13.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.13.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.13.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.13.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.13.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.13.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.13.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.13.conv1.weight": [
+    96,
+    612,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.13.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.14.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.14.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.14.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.14.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.14.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.14.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.14.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.14.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.14.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.14.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.14.conv1.weight": [
+    96,
+    636,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.14.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.15.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.15.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.15.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.15.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.15.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.15.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.15.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.15.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.15.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.15.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.15.conv1.weight": [
+    96,
+    660,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.15.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.2.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.2.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.2.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.2.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.2.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.2.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.2.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.2.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.2.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.2.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.2.conv1.weight": [
+    96,
+    348,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.2.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.3.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.3.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.3.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.3.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.3.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.3.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.3.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.3.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.3.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.3.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.3.conv1.weight": [
+    96,
+    372,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.3.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.4.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.4.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.4.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.4.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.4.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.4.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.4.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.4.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.4.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.4.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.4.conv1.weight": [
+    96,
+    396,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.4.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.5.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.5.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.5.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.5.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.5.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.5.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.5.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.5.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.5.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.5.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.5.conv1.weight": [
+    96,
+    420,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.5.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.6.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.6.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.6.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.6.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.6.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.6.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.6.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.6.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.6.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.6.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.6.conv1.weight": [
+    96,
+    444,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.6.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.7.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.7.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.7.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.7.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.7.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.7.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.7.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.7.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.7.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.7.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.7.conv1.weight": [
+    96,
+    468,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.7.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.8.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.8.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.8.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.8.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.8.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.8.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.8.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.8.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.8.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.8.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.8.conv1.weight": [
+    96,
+    492,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.8.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.dense3.9.bn1.bias": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.9.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.9.bn1.running_mean": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.9.bn1.running_var": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.9.bn1.weight": [
+    96
+  ],
+  "tamer_model.encoder.model.dense3.9.bn2.bias": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.9.bn2.num_batches_tracked": [],
+  "tamer_model.encoder.model.dense3.9.bn2.running_mean": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.9.bn2.running_var": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.9.bn2.weight": [
+    24
+  ],
+  "tamer_model.encoder.model.dense3.9.conv1.weight": [
+    96,
+    516,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.dense3.9.conv2.weight": [
+    24,
+    96,
+    3,
+    3
+  ],
+  "tamer_model.encoder.model.norm1.bias": [
+    48
+  ],
+  "tamer_model.encoder.model.norm1.num_batches_tracked": [],
+  "tamer_model.encoder.model.norm1.running_mean": [
+    48
+  ],
+  "tamer_model.encoder.model.norm1.running_var": [
+    48
+  ],
+  "tamer_model.encoder.model.norm1.weight": [
+    48
+  ],
+  "tamer_model.encoder.model.post_norm.bias": [
+    684
+  ],
+  "tamer_model.encoder.model.post_norm.num_batches_tracked": [],
+  "tamer_model.encoder.model.post_norm.running_mean": [
+    684
+  ],
+  "tamer_model.encoder.model.post_norm.running_var": [
+    684
+  ],
+  "tamer_model.encoder.model.post_norm.weight": [
+    684
+  ],
+  "tamer_model.encoder.model.trans1.bn1.bias": [
+    216
+  ],
+  "tamer_model.encoder.model.trans1.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.trans1.bn1.running_mean": [
+    216
+  ],
+  "tamer_model.encoder.model.trans1.bn1.running_var": [
+    216
+  ],
+  "tamer_model.encoder.model.trans1.bn1.weight": [
+    216
+  ],
+  "tamer_model.encoder.model.trans1.conv1.weight": [
+    216,
+    432,
+    1,
+    1
+  ],
+  "tamer_model.encoder.model.trans2.bn1.bias": [
+    300
+  ],
+  "tamer_model.encoder.model.trans2.bn1.num_batches_tracked": [],
+  "tamer_model.encoder.model.trans2.bn1.running_mean": [
+    300
+  ],
+  "tamer_model.encoder.model.trans2.bn1.running_var": [
+    300
+  ],
+  "tamer_model.encoder.model.trans2.bn1.weight": [
+    300
+  ],
+  "tamer_model.encoder.model.trans2.conv1.weight": [
+    300,
+    600,
+    1,
+    1
+  ],
+  "tamer_model.encoder.norm.bias": [
+    256
+  ],
+  "tamer_model.encoder.norm.weight": [
+    256
+  ],
+  "tamer_model.encoder_adapter.down.bias": [
+    64
+  ],
+  "tamer_model.encoder_adapter.down.weight": [
+    64,
+    256
+  ],
+  "tamer_model.encoder_adapter.gate_logit": [],
+  "tamer_model.encoder_adapter.norm.bias": [
+    256
+  ],
+  "tamer_model.encoder_adapter.norm.weight": [
+    256
+  ],
+  "tamer_model.encoder_adapter.up.bias": [
+    256
+  ],
+  "tamer_model.encoder_adapter.up.weight": [
+    256,
+    64
+  ]
+}

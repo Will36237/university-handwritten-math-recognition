@@ -1,0 +1,2 @@
+-r gateway/requirements.txt
+pytest==8.4.1

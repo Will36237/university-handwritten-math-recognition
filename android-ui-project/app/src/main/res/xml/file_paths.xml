@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path
+        name="camera_images"
+        path="camera/" />
+    <cache-path
+        name="cropped_images"
+        path="crops/" />
+    <cache-path
+        name="sample_images"
+        path="samples/" />
+    <cache-path
+        name="import_images"
+        path="imports/" />
+</paths>

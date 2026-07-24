@@ -1,0 +1,23 @@
+University HMER server bundle - 2026-07-20
+
+Included runtime assets:
+- TAMER source package
+- TAMER-A3 RealFT best checkpoint (epoch 56)
+- HME100k dictionary.txt used by the checkpoint decoder
+- Uni-MuMER Unsloth-trained LoRA best_adapter
+- FastAPI gateway, two isolated workers, Dockerfiles and GPU Compose configuration
+
+Intentionally excluded:
+- Training/validation/blind-test datasets
+- Epoch 58, epoch 60 and last.ckpt duplicates
+- Evaluation outputs, W&B logs and Unsloth compiled training cache
+- Local .venv, pytest caches, Android project and report documents
+
+Critical SHA-256 values (verified source == staged copy):
+9D961554FCFA23BA7CD5F53C008597ACBB3C1CFE5E654F61F67362B54FE5BD9F  hmer-project/outputs/real_ft_a3_dual_seed7/checkpoints/epoch=56-val_university_ExpRate=0.5637.ckpt
+DFF03BCFFF210E18DE5F9A66BB646BC5F2D207AB79E811F21F2E26BFC0C5C0B9  hmer-project/data/HME100k/dictionary.txt
+D3D3F64108E3191982BE792075402457EF675A7FC37E53B541A04FC6C894D2CD  hmer-project/outputs/unimumer_lora_unsloth_real/best_adapter/adapter_model.safetensors
+D63947A6D6E63DA410037BED12944B358904B11C0BF13E74ED757E094529E490  hmer-project/outputs/unimumer_lora_unsloth_real/best_adapter/adapter_config.json
+
+The SHA-256 of the final code-and-weights archive and the separate base-model cache
+are recorded next to the upload files in SHA256SUMS.txt.

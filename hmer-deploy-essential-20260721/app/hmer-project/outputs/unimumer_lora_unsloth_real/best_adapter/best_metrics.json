@@ -1,0 +1,10 @@
+{
+  "count": 259,
+  "ExpRate": 0.6486486486486487,
+  "ExpRate_le_1": 0.7567567567567568,
+  "ExpRate_le_2": 0.8185328185328186,
+  "TokenErrorRate": 0.046503957783641164,
+  "ValidLaTeX": 1.0,
+  "total_edit_distance": 423,
+  "total_gt_tokens": 9096
+}
