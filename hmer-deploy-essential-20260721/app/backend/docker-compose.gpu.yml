@@ -1,0 +1,76 @@
+name: university-hmer
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: gateway/Dockerfile
+    environment:
+      HMER_TAMER_WORKER_URL: http://tamer:8101
+      HMER_UNIMUMER_WORKER_URL: http://unimumer:8102
+      HMER_PREDICT_TIMEOUT_SECONDS: ${HMER_PREDICT_TIMEOUT_SECONDS:-180}
+    ports:
+      - "${HMER_GATEWAY_BIND_ADDRESS:-127.0.0.1}:8000:8000"
+    depends_on:
+      tamer:
+        condition: service_healthy
+      unimumer:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  tamer:
+    build:
+      context: .
+      dockerfile: workers/tamer/Dockerfile
+    environment:
+      HMER_TAMER_MODE: real
+      HMER_TAMER_EAGER_LOAD: "true"
+      HMER_TAMER_PROJECT_ROOT: /opt/hmer-project
+      HMER_TAMER_CHECKPOINT: /opt/hmer-project/outputs/real_ft_a3_dual_seed7/checkpoints/epoch=56-val_university_ExpRate=0.5637.ckpt
+      HMER_TAMER_DICTIONARY: /opt/hmer-project/data/HME100k/dictionary.txt
+    volumes:
+      - type: bind
+        source: ${HMER_PROJECT_HOST_PATH:-../hmer-project}
+        target: /opt/hmer-project
+        read_only: true
+    gpus: all
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8101/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  unimumer:
+    build:
+      context: .
+      dockerfile: workers/unimumer/Dockerfile
+    environment:
+      HMER_UNIMUMER_MODE: real
+      HMER_UNIMUMER_EAGER_LOAD: "true"
+      HMER_UNIMUMER_PROJECT_ROOT: /opt/hmer-project
+      HMER_UNIMUMER_BASE_MODEL: ${HMER_UNIMUMER_BASE_MODEL:-phxember/Uni-MuMER-Qwen3.5-2B}
+      HMER_UNIMUMER_BASE_MODEL_REVISION: ${HMER_UNIMUMER_BASE_MODEL_REVISION:-40a6288292057f1c162b3b0eaccd362036dbd495}
+      HMER_UNIMUMER_ADAPTER: /opt/hmer-project/outputs/unimumer_lora_unsloth_real/best_adapter
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-1}
+      TRANSFORMERS_OFFLINE: ${TRANSFORMERS_OFFLINE:-1}
+    volumes:
+      - type: bind
+        source: ${HMER_PROJECT_HOST_PATH:-../hmer-project}
+        target: /opt/hmer-project
+        read_only: true
+      - type: bind
+        source: ${HMER_HF_CACHE_HOST_PATH:-../../hf-cache}
+        target: /opt/huggingface
+    gpus: all
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8102/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5

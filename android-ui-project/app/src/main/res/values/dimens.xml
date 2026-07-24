@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Larger uCrop controls for emulator mouse use and easier touch interaction. -->
+    <dimen name="ucrop_default_crop_frame_stoke_width">3dp</dimen>
+    <dimen name="ucrop_default_crop_grid_stoke_width">1.5dp</dimen>
+    <dimen name="ucrop_default_crop_rect_corner_touch_area_line_length">24dp</dimen>
+    <dimen name="ucrop_default_crop_rect_corner_touch_threshold">48dp</dimen>
+    <dimen name="ucrop_default_crop_rect_min_size">48dp</dimen>
+</resources>

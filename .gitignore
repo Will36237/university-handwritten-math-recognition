@@ -1,0 +1,55 @@
+/.agents/
+/.ua/
+/.codegraph/
+
+# IDE / hệ điều hành
+**/.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Android
+**/.gradle/
+**/build/
+**/local.properties
+**/captures/
+*.apk
+*.aab
+
+# Python
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Runtime
+*.log
+*.pid
+
+# Cấu hình chứa bí mật
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Các bản backup source cũ
+/android-ui-project/_backups/
+*.backup*
+*_before_*.kt
+
+# Model cache và trọng số lớn
+/hmer-deploy-essential-20260721/hf-cache/
+*.ckpt
+*.safetensors
+*.pth
+*.pt
+*.bak
+/hmer-deploy-essential-20260721/backup_meta/
+/hmer-deploy-essential-20260721/app/backend/hmer_ui/
+/.note.txt
