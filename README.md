@@ -21,6 +21,12 @@ local Android SDK paths, `.env` files, and deployment archives are ignored. The
 real GPU stack therefore needs the separately supplied deployment bundle and model
 cache. The mock stack and Android UI can be built and tested without model weights.
 
+## Installation & Run
+
+For prerequisites, local mock setup, Android emulator/phone instructions,
+Ubuntu GPU deployment, testing, shutdown, and troubleshooting, follow the
+**[complete installation and run guide](docs/RUN_GUIDE.md)**.
+
 ## Local verification
 
 Backend mock contracts, from `hmer-deploy-essential-20260721/app/backend`:

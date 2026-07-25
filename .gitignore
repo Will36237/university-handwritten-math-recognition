@@ -1,6 +1,7 @@
 /.agents/
 /.ua/
 /.codegraph/
+/docs/superpowers/
 
 # IDE / hệ điều hành
 **/.idea/
