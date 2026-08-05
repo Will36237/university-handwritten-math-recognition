@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yalantis.ucrop.UCrop
 import kotlinx.coroutines.launch
+import vn.edu.fpt.hmerdemo.BuildConfig
 import vn.edu.fpt.hmerdemo.R
 import vn.edu.fpt.hmerdemo.image.ImageFiles
 import vn.edu.fpt.hmerdemo.image.ImageValidator
@@ -59,6 +60,9 @@ fun RecognitionScreen(
     startMode: RecognitionStartMode,
     onBackToOverview: () -> Unit,
     api: HmerApi = HmerApiClient,
+    modelMode: RecognitionModelMode = RecognitionModelMode.fromConfig(
+        BuildConfig.HMER_MODEL_UI_MODE,
+    ),
 ) {
     val context = LocalContext.current
     val initialSampleUri = remember(startMode) {
@@ -220,13 +224,9 @@ fun RecognitionScreen(
         state = state.clear()
     }
 
-    fun runApi(runTamer: Boolean, runUni: Boolean) {
+    fun runApi(models: List<HmerModel>) {
         if (!state.isCropped || state.isRunning) return
         val imageUri = state.croppedImageUri?.let(Uri::parse) ?: return
-        val models = buildList {
-            if (runTamer) add(HmerModel.Tamer)
-            if (runUni) add(HmerModel.UniMumer)
-        }
         scope.launch {
             state = state.start(models.toSet())
             try {
@@ -365,10 +365,13 @@ fun RecognitionScreen(
                 )
             }
             ModelControls(
+                mode = modelMode,
                 enabled = state.isCropped && !state.isRunning,
-                onRunTamer = { runApi(true, false) },
-                onRunUni = { runApi(false, true) },
-                onRunBoth = { runApi(true, true) },
+                onRunTamer = { runApi(listOf(HmerModel.Tamer)) },
+                onRunUni = { runApi(listOf(HmerModel.UniMumer)) },
+                onRunBoth = {
+                    runApi(listOf(HmerModel.Tamer, HmerModel.UniMumer))
+                },
             )
             if (state.isRunning) LoadingCard()
             Text(
@@ -377,14 +380,16 @@ fun RecognitionScreen(
                 fontWeight = FontWeight.Bold,
                 color = Ink,
             )
-            ResultCard(
-                title = stringResource(R.string.model_tamer_title),
-                subtitle = stringResource(R.string.model_tamer_subtitle),
-                accent = TamerBlue,
-                softColor = TamerSoft,
-                result = state.tamerResult,
-                error = state.tamerError,
-            )
+            if (modelMode.showsAllModels) {
+                ResultCard(
+                    title = stringResource(R.string.model_tamer_title),
+                    subtitle = stringResource(R.string.model_tamer_subtitle),
+                    accent = TamerBlue,
+                    softColor = TamerSoft,
+                    result = state.tamerResult,
+                    error = state.tamerError,
+                )
+            }
             ResultCard(
                 title = stringResource(R.string.model_unimumer_title),
                 subtitle = stringResource(R.string.model_unimumer_subtitle),

@@ -7,6 +7,9 @@ param(
 
     [string]$ApiBaseUrl = "",
 
+    [ValidateSet("uni_only", "all_models")]
+    [string]$ModelUiMode = "uni_only",
+
     [switch]$SkipBuild
 )
 
@@ -80,6 +83,7 @@ if (-not $SkipBuild) {
         & $gradle `
             --console=plain `
             "-PHMER_API_BASE_URL=$ApiBaseUrl" `
+            "-PHMER_MODEL_UI_MODE=$ModelUiMode" `
             assembleDebug
         if ($LASTEXITCODE -ne 0) {
             throw "Android debug build failed."
@@ -133,6 +137,11 @@ Invoke-TargetAdb -AdbArguments @(
 Write-Host "HMER Demo installed and opened on $Serial."
 Write-Host "Target: $Target"
 Write-Host "API base URL compiled into this APK: $ApiBaseUrl"
+if ($SkipBuild) {
+    Write-Host "Model UI mode unchanged: existing APK reused; -ModelUiMode was not applied."
+} else {
+    Write-Host "Model UI mode compiled into this APK: $ModelUiMode"
+}
 if ($Target -eq "phone") {
     Write-Host "ADB reverse: device 127.0.0.1:8000 -> laptop 127.0.0.1:8000"
 }

@@ -3,6 +3,14 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val modelUiMode = providers.gradleProperty("HMER_MODEL_UI_MODE")
+    .orElse("uni_only")
+    .get()
+val supportedModelUiModes = setOf("uni_only", "all_models")
+require(modelUiMode in supportedModelUiModes) {
+    "HMER_MODEL_UI_MODE must be one of: ${supportedModelUiModes.joinToString()}"
+}
+
 android {
     namespace = "vn.edu.fpt.hmerdemo"
     compileSdk {
@@ -20,6 +28,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "HMER_API_BASE_URL", "\"${project.findProperty("HMER_API_BASE_URL") ?: "http://10.0.2.2:8000"}\"")
+        buildConfigField("String", "HMER_MODEL_UI_MODE", "\"$modelUiMode\"")
     }
 
     buildTypes {
