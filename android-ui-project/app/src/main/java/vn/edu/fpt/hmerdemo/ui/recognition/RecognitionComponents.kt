@@ -239,6 +239,7 @@ internal fun FormulaImageBox(label: String, imageUri: Uri? = null) {
 
 @Composable
 internal fun ModelControls(
+    mode: RecognitionModelMode,
     enabled: Boolean,
     onRunTamer: () -> Unit,
     onRunUni: () -> Unit,
@@ -257,21 +258,39 @@ internal fun ModelControls(
                 fontWeight = FontWeight.SemiBold,
                 color = Ink,
             )
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedButton(onClick = onRunTamer, enabled = enabled, modifier = Modifier.weight(1f)) {
-                    Text(stringResource(R.string.model_tamer_title), maxLines = 1)
+            if (mode.showsAllModels) {
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedButton(
+                        onClick = onRunTamer,
+                        enabled = enabled,
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        Text(stringResource(R.string.model_tamer_title), maxLines = 1)
+                    }
+                    OutlinedButton(
+                        onClick = onRunUni,
+                        enabled = enabled,
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        Text(stringResource(R.string.model_unimumer_action), maxLines = 1)
+                    }
                 }
-                OutlinedButton(onClick = onRunUni, enabled = enabled, modifier = Modifier.weight(1f)) {
+                Button(
+                    onClick = onRunBoth,
+                    enabled = enabled,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(containerColor = Ink),
+                ) {
+                    Text(stringResource(R.string.action_compare_models))
+                }
+            } else {
+                Button(
+                    onClick = onRunUni,
+                    enabled = enabled,
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
                     Text(stringResource(R.string.model_unimumer_action), maxLines = 1)
                 }
-            }
-            Button(
-                onClick = onRunBoth,
-                enabled = enabled,
-                modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = Ink),
-            ) {
-                Text(stringResource(R.string.action_compare_models))
             }
         }
     }

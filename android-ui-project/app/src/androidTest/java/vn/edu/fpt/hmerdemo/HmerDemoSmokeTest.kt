@@ -11,6 +11,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.edu.fpt.hmerdemo.ui.recognition.RecognitionModelMode
 
 @RunWith(AndroidJUnit4::class)
 class HmerDemoSmokeTest {
@@ -25,9 +26,18 @@ class HmerDemoSmokeTest {
         composeRule.onNodeWithText("Ch\u1ee5p \u1ea3nh").assertIsDisplayed()
         composeRule.onNodeWithText("Th\u01b0 vi\u1ec7n").assertIsDisplayed()
         composeRule.onNodeWithText("D\u00f9ng \u1ea3nh m\u1eabu").assertIsDisplayed()
-        composeRule.onAllNodesWithText("TAMER-A3").assertCountEquals(2)
         composeRule.onNodeWithText("Uni-MuMER").assertIsDisplayed()
-        composeRule.onNodeWithText("So s\u00e1nh models").assertIsDisplayed()
+        composeRule.onAllNodesWithText("Uni-MuMER LoRA").assertCountEquals(1)
+        when (RecognitionModelMode.fromConfig(BuildConfig.HMER_MODEL_UI_MODE)) {
+            RecognitionModelMode.UNI_ONLY -> {
+                composeRule.onAllNodesWithText("TAMER-A3").assertCountEquals(0)
+                composeRule.onAllNodesWithText("So s\u00e1nh models").assertCountEquals(0)
+            }
+            RecognitionModelMode.ALL_MODELS -> {
+                composeRule.onAllNodesWithText("TAMER-A3").assertCountEquals(2)
+                composeRule.onNodeWithText("So s\u00e1nh models").assertIsDisplayed()
+            }
+        }
         composeRule.onNodeWithText("D\u00f9ng \u1ea3nh m\u1eabu").performClick()
         composeRule.onNodeWithText("C\u1eaft v\u00f9ng c\u00f4ng th\u1ee9c")
             .performScrollTo()
