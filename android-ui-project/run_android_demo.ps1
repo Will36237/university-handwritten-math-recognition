@@ -126,12 +126,11 @@ Invoke-TargetAdb -AdbArguments @(
 )
 Invoke-TargetAdb -AdbArguments @(
     "shell",
-    "monkey",
-    "-p",
-    $packageName,
-    "-c",
-    "android.intent.category.LAUNCHER",
-    "1"
+    "am",
+    "start",
+    "-W",
+    "-n",
+    "$packageName/.MainActivity"
 )
 
 Write-Host "HMER Demo installed and opened on $Serial."

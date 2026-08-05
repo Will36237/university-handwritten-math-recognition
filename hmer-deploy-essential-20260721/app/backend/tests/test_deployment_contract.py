@@ -2,6 +2,7 @@ from pathlib import Path
 
 
 BACKEND_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = BACKEND_ROOT.parents[2]
 
 
 def test_default_host_paths_match_bundle_layout() -> None:
@@ -51,3 +52,12 @@ def test_tamer_keeps_pkg_resources_compatible_setuptools() -> None:
     ).read_text(encoding="utf-8")
 
     assert "setuptools==80.9.0" in requirements
+
+
+def test_android_runner_launches_main_activity_directly() -> None:
+    runner = (
+        REPOSITORY_ROOT / "android-ui-project" / "run_android_demo.ps1"
+    ).read_text(encoding="utf-8")
+
+    assert '"monkey"' not in runner
+    assert '"$packageName/.MainActivity"' in runner
