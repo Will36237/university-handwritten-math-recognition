@@ -56,9 +56,6 @@ uses ADB reverse; an emulator uses `10.0.2.2`; a remote GPU is reached through a
 SSH tunnel. The service has no public-internet authentication layer, so do not
 publish the gateway port directly.
 
-See [the security audit](docs/security-audit-2026-07-24.md) for the reviewed
-boundaries, resolved findings, and accepted legacy-model risk.
-
 ## Status
 
 The repository contains automated safety nets for API contracts, deployment

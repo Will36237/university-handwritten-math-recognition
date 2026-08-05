@@ -597,6 +597,3 @@ git status --short
 git diff --check
 git diff --cached --check
 ```
-
-For reviewed security boundaries and accepted risks, see the
-[security audit](security-audit-2026-07-24.md).
