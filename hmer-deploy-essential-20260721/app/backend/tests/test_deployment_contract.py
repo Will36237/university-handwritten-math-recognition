@@ -43,3 +43,11 @@ def test_unimumer_declares_matching_torchvision_runtime() -> None:
 
     assert "https://download.pytorch.org/whl/cu126" in requirements
     assert "torchvision==0.22.1+cu126" in requirements
+
+
+def test_tamer_keeps_pkg_resources_compatible_setuptools() -> None:
+    requirements = (
+        BACKEND_ROOT / "workers" / "tamer" / "requirements.txt"
+    ).read_text(encoding="utf-8")
+
+    assert "setuptools==80.9.0" in requirements
