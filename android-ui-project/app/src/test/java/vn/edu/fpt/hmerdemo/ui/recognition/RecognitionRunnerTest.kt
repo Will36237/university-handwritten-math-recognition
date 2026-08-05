@@ -8,6 +8,7 @@ import vn.edu.fpt.hmerdemo.network.HmerApi
 import vn.edu.fpt.hmerdemo.network.HmerApiException
 import vn.edu.fpt.hmerdemo.network.HmerModel
 import vn.edu.fpt.hmerdemo.network.PredictionResult
+import java.util.Locale
 
 
 class RecognitionRunnerTest {
@@ -63,19 +64,25 @@ class RecognitionRunnerTest {
     }
 
     @Test
-    fun successFormatsExistingResultFields() = runBlocking {
-        val outcomes = mutableListOf<RecognitionOutcome>()
+    fun successFormatsExistingResultFieldsIndependentlyOfDefaultLocale() = runBlocking {
+        val originalLocale = Locale.getDefault()
+        try {
+            Locale.setDefault(Locale.GERMANY)
+            val outcomes = mutableListOf<RecognitionOutcome>()
 
-        RecognitionRunner(FakeApi()).run(
-            byteArrayOf(1),
-            listOf(HmerModel.Tamer),
-            outcomes::add,
-        )
+            RecognitionRunner(FakeApi()).run(
+                byteArrayOf(1),
+                listOf(HmerModel.Tamer),
+                outcomes::add,
+            )
 
-        val result = (outcomes.single() as RecognitionOutcome.Success).result
-        assertEquals("tamer_a3-latex", result.latex)
-        assertEquals("tamer_a3-latex", result.rendered)
-        assertEquals("1.235 s", result.formattedLatency)
+            val result = (outcomes.single() as RecognitionOutcome.Success).result
+            assertEquals("tamer_a3-latex", result.latex)
+            assertEquals("tamer_a3-latex", result.rendered)
+            assertEquals("1.235 s", result.formattedLatency)
+        } finally {
+            Locale.setDefault(originalLocale)
+        }
     }
 }
 

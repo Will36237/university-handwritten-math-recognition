@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Larger uCrop controls for emulator mouse use and easier touch interaction. -->
-    <dimen name="ucrop_default_crop_frame_stoke_width">3dp</dimen>
-    <dimen name="ucrop_default_crop_grid_stoke_width">1.5dp</dimen>
-    <dimen name="ucrop_default_crop_rect_corner_touch_area_line_length">24dp</dimen>
-    <dimen name="ucrop_default_crop_rect_corner_touch_threshold">48dp</dimen>
-    <dimen name="ucrop_default_crop_rect_min_size">48dp</dimen>
+    <dimen
+        name="ucrop_default_crop_frame_stoke_width"
+        tools:ignore="UnusedResources"
+        tools:override="true">3dp</dimen>
+    <dimen
+        name="ucrop_default_crop_grid_stoke_width"
+        tools:ignore="UnusedResources"
+        tools:override="true">1.5dp</dimen>
+    <dimen
+        name="ucrop_default_crop_rect_corner_touch_area_line_length"
+        tools:ignore="UnusedResources"
+        tools:override="true">24dp</dimen>
+    <dimen
+        name="ucrop_default_crop_rect_corner_touch_threshold"
+        tools:ignore="UnusedResources"
+        tools:override="true">48dp</dimen>
+    <dimen
+        name="ucrop_default_crop_rect_min_size"
+        tools:ignore="UnusedResources"
+        tools:override="true">48dp</dimen>
 </resources>

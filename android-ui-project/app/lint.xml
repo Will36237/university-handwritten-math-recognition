@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- Toolchain and dependencies are intentionally pinned to the verified project baseline. -->
+    <issue
+        id="AndroidGradlePluginVersion,GradleDependency,NewerVersionAvailable,OldTargetApi"
+        severity="ignore" />
+    <!-- AAPT requires adaptive-icon XML in a v26-qualified directory. -->
+    <issue id="ObsoleteSdkInt" severity="ignore" />
+</lint>

@@ -1,6 +1,5 @@
 package vn.edu.fpt.hmerdemo.ui.onboarding
 
-import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -9,9 +8,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.core.net.toUri
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,7 +33,7 @@ import vn.edu.fpt.hmerdemo.ui.recognition.FormulaImageBox
 
 @Composable
 fun OnboardingScreen(onStart: (RecognitionStartMode) -> Unit) {
-    var page by remember { mutableStateOf(0) }
+    var page by remember { mutableIntStateOf(0) }
 
     Scaffold(containerColor = AppBackground) { innerPadding ->
 
@@ -116,7 +116,7 @@ fun OnboardingScreen(onStart: (RecognitionStartMode) -> Unit) {
 private fun ProblemStoryPage() {
     val context = LocalContext.current
     val realHandwritingSample = remember(context) {
-        Uri.parse("android.resource://${context.packageName}/${R.drawable.sample_hard_01}")
+        "android.resource://${context.packageName}/${R.drawable.sample_hard_01}".toUri()
     }
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),

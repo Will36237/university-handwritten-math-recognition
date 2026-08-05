@@ -3,6 +3,7 @@ package vn.edu.fpt.hmerdemo.ui.recognition
 import vn.edu.fpt.hmerdemo.network.HmerApi
 import vn.edu.fpt.hmerdemo.network.HmerApiException
 import vn.edu.fpt.hmerdemo.network.HmerModel
+import java.util.Locale
 
 
 sealed interface RecognitionOutcome {
@@ -41,11 +42,15 @@ class RecognitionRunner(
             val outcome = try {
                 val response = api.predict(imageBytes, model)
                 RecognitionOutcome.Success(
-                    model=model,
-                    result=ModelResult(
-                        latex=response.latex,
-                        rendered=response.latex,
-                        formattedLatency=String.format("%.3f s", response.latencyMs / 1000.0),
+                    model = model,
+                    result = ModelResult(
+                        latex = response.latex,
+                        rendered = response.latex,
+                        formattedLatency = String.format(
+                            Locale.US,
+                            "%.3f s",
+                            response.latencyMs / 1000.0,
+                        ),
                     ),
                 )
             } catch (error: HmerApiException) {
