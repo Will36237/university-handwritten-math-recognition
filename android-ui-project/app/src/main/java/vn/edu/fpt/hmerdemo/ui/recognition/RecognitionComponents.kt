@@ -1,5 +1,6 @@
 package vn.edu.fpt.hmerdemo.ui.recognition
 
+import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -390,6 +391,7 @@ private fun buildKatexHtml(latex: String): String {
     """.trimIndent()
 }
 
+@SuppressLint("SetJavaScriptEnabled")
 @Composable
 private fun LatexView(
     latex: String,
@@ -401,9 +403,13 @@ private fun LatexView(
         modifier = modifier,
         factory = { context ->
             WebView(context).apply {
+                // KaTeX requires JavaScript; only bundled assets are loaded and network access is blocked.
                 settings.javaScriptEnabled = true
+                settings.javaScriptCanOpenWindowsAutomatically = false
                 settings.allowFileAccess = true
                 settings.allowContentAccess = false
+                settings.blockNetworkLoads = true
+                settings.blockNetworkImage = true
                 settings.setSupportZoom(false)
                 settings.textZoom = 100
                 settings.useWideViewPort = true
