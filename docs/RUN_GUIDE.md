@@ -240,12 +240,23 @@ $adb = Join-Path $env:ANDROID_HOME 'platform-tools\adb.exe'
 Install and launch the app:
 
 ```powershell
-.\run_android_demo.ps1 -Target emulator
+.\run_android_demo.ps1 `
+  -Target emulator `
+  -ModelUiMode uni_only
 ```
 
 The script builds the APK with `http://10.0.2.2:8000`, installs it on the
-emulator, and launches it. The mock backend from Section 4 must still be
-running.
+emulator, and launches it. `uni_only` is the default and displays one
+Uni-MuMER action and one Uni-MuMER result card. The mock backend from Section 4
+must still be running.
+
+To restore the complete TAMER-A3, Uni-MuMER, and compare-models interface:
+
+```powershell
+.\run_android_demo.ps1 `
+  -Target emulator `
+  -ModelUiMode all_models
+```
 
 ### 5.3 Use a physical Android phone
 
@@ -262,25 +273,51 @@ $adb = Join-Path $env:ANDROID_HOME 'platform-tools\adb.exe'
 5. Build, install, configure `adb reverse`, and launch:
 
 ```powershell
-.\run_android_demo.ps1 -Target phone
+.\run_android_demo.ps1 `
+  -Target phone `
+  -ModelUiMode uni_only
 ```
 
 If multiple physical devices are connected:
 
 ```powershell
 $DeviceSerial = Read-Host 'Authorized physical-device serial'
-.\run_android_demo.ps1 -Target phone -Serial $DeviceSerial
+.\run_android_demo.ps1 `
+  -Target phone `
+  -Serial $DeviceSerial `
+  -ModelUiMode uni_only
 ```
 
 The script compiles `http://127.0.0.1:8000` into the phone build and creates
-the required reverse-port mapping.
+the required reverse-port mapping. Use `-ModelUiMode all_models` with either
+target when the full two-model interface is needed.
+
+The model UI mode is compiled into the APK. Run the script without
+`-SkipBuild` after changing modes. `-SkipBuild` only reinstalls the APK that
+was built most recently; it cannot change that APK's mode.
+
+To build without installing, use one of these commands from
+`android-ui-project`:
+
+```powershell
+.\gradlew.bat `
+  --console=plain `
+  -PHMER_MODEL_UI_MODE=uni_only `
+  assembleDebug
+
+.\gradlew.bat `
+  --console=plain `
+  -PHMER_MODEL_UI_MODE=all_models `
+  assembleDebug
+```
 
 ### 5.4 Exercise the UI
 
 1. Choose **Thư viện** or **Chụp ảnh**.
 2. Select or capture a handwritten formula.
 3. Choose **Cắt vùng công thức** and confirm the crop.
-4. Run **TAMER-A3**, **Uni-MuMER**, or **So sánh models**.
+4. In the default `uni_only` build, run **Uni-MuMER**. In an `all_models`
+   build, run **TAMER-A3**, **Uni-MuMER**, or **So sánh models**.
 5. Confirm that the result contains LaTeX and that the formula is rendered.
 
 See the
