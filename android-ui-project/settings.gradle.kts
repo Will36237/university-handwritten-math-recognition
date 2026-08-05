@@ -23,5 +23,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HMER DEMO"
+rootProject.name = "University HMER"
 include(":app")
