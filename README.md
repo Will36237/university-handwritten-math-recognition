@@ -1,65 +1,62 @@
-# University HMER
+# University HMER Demo
 
-University HMER is an Android demonstration app and a GPU-ready backend for
-recognizing handwritten mathematical expressions and returning LaTeX. A user can
-choose an image or capture one with the phone camera, crop the formula, and run
-either the TAMER-A3 or Uni-MuMER LoRA model through the same API.
+Android application and FastAPI backend for recognizing handwritten mathematical expressions and converting them into LaTeX.
 
-## Repository layout
+## Overview
 
-- `android-ui-project/`: Kotlin/Jetpack Compose application, camera/gallery import,
-  crop flow, local KaTeX rendering, and Android tests.
-- `hmer-deploy-essential-20260721/app/backend/`: FastAPI gateway, isolated model
-  workers, Docker GPU deployment, and contract tests.
-- `hmer-deploy-essential-20260721/app/hmer-project/`: refactored TAMER research
-  runtime plus model contract tests.
+The backend supports two models:
 
-## What is intentionally not in Git
+- **TAMER-A3 RealFT:** fast specialist model for research and controlled-domain testing.
+- **Uni-MuMER LoRA:** primary deployment model with stronger practical robustness.
 
-Model weights, Hugging Face caches, Python virtual environments, APK/AAB outputs,
-local Android SDK paths, `.env` files, and deployment archives are ignored. The
-real GPU stack therefore needs the separately supplied deployment bundle and model
-cache. The mock stack and Android UI can be built and tested without model weights.
+The Android application displays only **Uni-MuMER LoRA**. TAMER-A3 remains available through the backend API for research and testing.
 
-## Installation & Run
+## Workflow
 
-For prerequisites, local mock setup, Android emulator/phone instructions,
-Ubuntu GPU deployment, testing, shutdown, and troubleshooting, follow the
-**[complete installation and run guide](docs/RUN_GUIDE.md)**.
-
-## Local verification
-
-Backend mock contracts, from `hmer-deploy-essential-20260721/app/backend`:
-
-```powershell
+```text
+Capture or select image
+→ Crop formula
+→ Validate image
+→ Run Uni-MuMER LoRA
+→ Display and render LaTeX
+Repository Structure
+├── android-ui-project/                 # Kotlin/Jetpack Compose application
+└── hmer-deploy-essential-20260721/
+    └── app/
+        ├── backend/                    # FastAPI gateway and model workers
+        └── hmer-project/               # TAMER inference runtime
+Main Features
+In-app camera and gallery import
+Manual formula cropping
+Original and cropped-image previews
+JPEG, PNG and WEBP validation
+Maximum upload size of 10 MB
+TAMER-A3 and Uni-MuMER LoRA backend workers
+LaTeX output and mathematical rendering
+Mock backend for local testing
+Local Verification
+Backend:
+cd hmer-deploy-essential-20260721/app/backend
 py -3.11 -m venv hmer_ui
-.\hmer_ui\Scripts\python.exe -m pip install -r .\requirements-test.txt
-.\hmer_ui\Scripts\python.exe -m pytest .\tests -q
-```
-
-Android build and tests, from `android-ui-project`:
-
-```powershell
+.\hmer_ui\Scripts\python.exe -m pip install -r requirements-test.txt
+.\hmer_ui\Scripts\python.exe -m pytest tests -q
+Android:
+cd android-ui-project
 .\gradlew.bat --console=plain testDebugUnitTest lintDebug assembleDebug
-.\gradlew.bat --console=plain connectedDebugAndroidTest
-```
-
-See [the backend guide](hmer-deploy-essential-20260721/app/backend/README.md) for
-the mock and GPU services. See
-[the camera demo guide](android-ui-project/CAMERA_DEMO_GUIDE.md) for a physical
-phone, emulator, integrated webcam, or external webcam.
-
-## Network boundary
-
-The Docker gateway binds to `127.0.0.1:8000` by default. A physical Android phone
-uses ADB reverse; an emulator uses `10.0.2.2`; a remote GPU is reached through an
-SSH tunnel. The service has no public-internet authentication layer, so do not
-publish the gateway port directly.
-
-## Status
-
-The repository contains automated safety nets for API contracts, deployment
-layout, Android state/orchestration, image URI handling, and network policy.
-The real Docker stack and both models have been verified on an RTX 3090 Ti.
-Camera preview/crop smoke testing still requires the selected physical phone or
-an enabled laptop/external webcam.
+Debug APK:
+android-ui-project/app/build/outputs/apk/debug/app-debug.apk
+Network
+Android Emulator: http://10.0.2.2:8000
+Physical device: use adb reverse
+LDPlayer: use the host or bridged-network IP
+Remote GPU: use an SSH tunnel or protected HTTPS endpoint
+Do not expose the FastAPI port directly to the public Internet without authentication and HTTPS.
+Model Files
+Model weights, Hugging Face caches, virtual environments, APK/AAB outputs, .env files and deployment archives are excluded from Git.
+Real inference requires the TAMER-A3 checkpoint, Uni-MuMER base model and LoRA adapter.
+The inference pipeline has been evaluated on an NVIDIA GeForce RTX 3090 with 24 GB VRAM.
+Research Repository
+Training code, datasets, experiments and evaluation results are maintained separately:
+<RESEARCH_REPOSITORY_URL>
+License
+See LICENSE. Model weights and upstream dependencies remain subject to their respective licenses.
