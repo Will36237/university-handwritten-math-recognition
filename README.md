@@ -67,8 +67,7 @@ The inference pipeline was evaluated on an **NVIDIA GeForce RTX 3090 with 24 GB 
 
 Training code, datasets, experiments, and evaluation results are maintained separately:
 
-`[<RESEARCH_REPOSITORY_URL>](https://github.com/tuanfptu/SU26AI46_GSU08-Capstone-UniversityHMER)`
-
+[University HMER Research Repository](https://github.com/tuanfptu/SU26AI46_GSU08-Capstone-UniversityHMER)
 ## License
 
 See [LICENSE](LICENSE). Model weights and upstream dependencies remain subject to their respective licenses.
