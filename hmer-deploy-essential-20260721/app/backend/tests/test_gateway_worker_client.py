@@ -116,6 +116,33 @@ def test_predict_passes_through_worker_error() -> None:
     assert captured.value.message == "no formula"
 
 
+def test_predict_preserves_non_math_image_error() -> None:
+    message = "Ảnh không chứa công thức toán đủ rõ để nhận dạng."
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            422,
+            json={"error": {"code": "NON_MATH_IMAGE", "message": message}},
+        )
+
+    client = WorkerClient(SETTINGS, httpx.MockTransport(handler))
+
+    with pytest.raises(ApiError) as captured:
+        asyncio.run(
+            client.predict(
+                "unimumer_lora",
+                "id",
+                "formula.png",
+                "image/png",
+                b"image",
+            ),
+        )
+
+    assert captured.value.status_code == 422
+    assert captured.value.code == "NON_MATH_IMAGE"
+    assert captured.value.message == message
+
+
 def test_predict_rejects_invalid_success_response() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, text="not-json")
