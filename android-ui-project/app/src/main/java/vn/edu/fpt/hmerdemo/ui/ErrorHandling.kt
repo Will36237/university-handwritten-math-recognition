@@ -16,6 +16,7 @@ enum class HmerErrorCode {
     IMAGE_TOO_BLURRY,
     CROP_INVALID,
     NO_FORMULA_CONTENT,
+    NON_MATH_IMAGE,
     MULTIPLE_FORMULAS,
     NETWORK_OFFLINE,
     NETWORK_TIMEOUT,
@@ -54,6 +55,7 @@ fun HmerErrorCode.toUiError(): UiError = when (this) {
     HmerErrorCode.IMAGE_TOO_BLURRY -> UiError(this, "Ảnh bị mờ", "Đường nét công thức không đủ sắc nét.", "Giữ máy ổn định, lấy nét và chụp lại gần hơn.", false)
     HmerErrorCode.CROP_INVALID -> UiError(this, "Vùng cắt chưa hợp lệ", "Vùng đã chọn quá nhỏ hoặc nằm ngoài ảnh.", "Cắt lại và bao trọn một biểu thức.", false)
     HmerErrorCode.NO_FORMULA_CONTENT -> UiError(this, "Không tìm thấy công thức", "Vùng ảnh chưa thể hiện rõ một biểu thức toán.", "Cắt sát công thức hoặc chọn ảnh khác.", false)
+    HmerErrorCode.NON_MATH_IMAGE -> UiError(this, "Không tìm thấy công thức toán", "Ảnh không chứa công thức toán đủ rõ để nhận dạng.", "Hãy chụp hoặc cắt sát một công thức toán rồi thử lại.", false)
     HmerErrorCode.MULTIPLE_FORMULAS -> UiError(this, "Có nhiều công thức", "Mỗi lượt nhận dạng nên chứa một biểu thức.", "Cắt riêng công thức cần nhận dạng.", false)
     HmerErrorCode.NETWORK_OFFLINE -> UiError(this, "Không có kết nối mạng", "Ứng dụng chưa thể kết nối tới máy chủ nhận dạng.", "Kiểm tra Wi-Fi hoặc mạng di động rồi thử lại.")
     HmerErrorCode.NETWORK_TIMEOUT -> UiError(this, "Yêu cầu quá thời gian", "Máy chủ phản hồi chậm hơn dự kiến.", "Giữ nguyên ảnh và thử lại sau ít phút.")
