@@ -53,7 +53,8 @@ Enable real inference with `HMER_TAMER_MODE=real` and
 
 Relevant path overrides are `HMER_TAMER_PROJECT_ROOT`, `HMER_TAMER_CHECKPOINT`,
 `HMER_TAMER_DICTIONARY`, `HMER_UNIMUMER_BASE_MODEL`,
-`HMER_UNIMUMER_BASE_MODEL_REVISION`, and `HMER_UNIMUMER_ADAPTER`.
+`HMER_UNIMUMER_BASE_MODEL_REVISION`, `HMER_MATH_CLASSIFIER_MODEL`,
+`HMER_MATH_CLASSIFIER_REVISION`, and `HMER_UNIMUMER_ADAPTER`.
 
 Uploaded JPEG/PNG/WEBP images are limited to 10 MB, validated in memory, forwarded to
 one selected worker, and not stored by this codebase. See `ARCHITECTURE.md` for the
@@ -62,6 +63,13 @@ service boundary.
 The shared validator also rejects clearly blank or smooth shadow-only crops with
 `NO_FORMULA_CONTENT`. This is a conservative pre-check; it does not claim that every
 accepted crop contains a valid mathematical expression.
+
+Before Uni-MuMER LoRA recognition, the Uni-MuMER worker uses the separately loaded,
+revision-pinned `Qwen/Qwen3.5-2B` vision-language model to classify the crop as
+`MATH`, `NON_MATH`, or `UNCERTAIN`. Only `MATH` reaches the recognizer. The other
+two decisions return `NON_MATH_IMAGE` without generating LaTeX. A classifier runtime
+or response-contract failure returns `IMAGE_CLASSIFIER_UNAVAILABLE` instead of
+silently sending an unchecked image to the recognizer.
 
 ## Docker on an RTX 3090 server
 
@@ -76,7 +84,9 @@ docker compose --env-file .env.gpu -f docker-compose.gpu.yml ps
 ```
 
 The preflight verifies the recorded SHA-256 values for the checkpoint,
-dictionary, and LoRA adapter before either worker starts.
+dictionary, and LoRA adapter before either worker starts. It also requires the pinned
+official Qwen classifier snapshot to already exist in the Hugging Face cache because
+the production worker runs in offline mode.
 
 The canonical bundle keeps the project at `app/hmer-project` and the Hugging Face
 cache at top-level `hf-cache`. Their default paths from this directory are therefore

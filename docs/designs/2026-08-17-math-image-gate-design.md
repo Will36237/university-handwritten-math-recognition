@@ -16,10 +16,12 @@ ordinary text still contains enough strokes to pass. The Uni-MuMER prompt then
 assumes that every accepted image contains a formula, so the model may generate
 repeated mathematical tokens for an unrelated image.
 
-Uni-MuMER already loads a Qwen3.5-2B multimodal base model and attaches a LoRA
-adapter. Loading a second Qwen model would duplicate weights, increase startup
-time, and consume additional GPU memory. The gate therefore reuses the loaded
-base model with the LoRA adapter temporarily disabled.
+The configured recognition model, `phxember/Uni-MuMER-Qwen3.5-2B`, is itself a
+full HMER fine-tune of Qwen3.5-2B. Disabling the project's additional LoRA does
+not restore a general-purpose Qwen model and therefore cannot be trusted as a
+non-math classifier. The gate loads the official `Qwen/Qwen3.5-2B` checkpoint as
+a separate validator inside the existing Uni-MuMER worker. Its revision is
+pinned to `15852e8c16360a2fea060d615a32b45270f8a8fc`.
 
 ## Accepted and rejected inputs
 
@@ -46,16 +48,17 @@ Uni-MuMER worker performs the new semantic gate immediately before recognition:
 1. Decode and validate the uploaded image using the existing shared validator.
 2. Acquire the Uni-MuMER adapter lock for the complete semantic-check and OCR
    sequence.
-3. Disable the LoRA adapter and ask the Qwen3.5 base model for exactly one of
-   `MATH`, `NON_MATH`, or `UNCERTAIN` using deterministic generation.
+3. Ask the official Qwen3.5-2B validator for exactly one of `MATH`, `NON_MATH`,
+   or `UNCERTAIN` using deterministic generation.
 4. Parse the answer strictly. Only the exact normalized token `MATH` is accepted.
-5. Re-enable the existing LoRA adapter and run the current LaTeX prompt when the
-   decision is `MATH`.
+5. Run the existing Uni-MuMER LoRA model and LaTeX prompt when the decision is
+   `MATH`.
 6. Return the existing successful prediction contract unchanged.
 
-The semantic gate is contained in the Uni-MuMER adapter because it shares that
-model's processor, weights, GPU device, and lock. TAMER behavior remains
-unchanged.
+The semantic gate is contained in the Uni-MuMER adapter because it shares the
+worker lifecycle, GPU device, and concurrency lock. The validator has its own
+processor and official Qwen weights; it does not reuse HMER-fine-tuned weights.
+TAMER behavior remains unchanged.
 
 ## Error contract and Android behavior
 
@@ -77,11 +80,11 @@ This operational failure is not mislabeled as a bad user image.
 
 ## Concurrency and resource safety
 
-The same PEFT model instance switches between base inference and LoRA inference,
-so both operations execute under the existing adapter lock. No request can
-enable or disable the adapter while another request is generating. The design
-does not load a second model and does not introduce a new container or network
-service.
+The official Qwen validator and Uni-MuMER PEFT recognizer are separate model
+instances, but both operations execute under the existing adapter lock. No two
+requests can generate concurrently in this worker. The validator adds about
+4.55 GB of model weights. It does not introduce a new container or network
+service, and RTX 3090 GPU acceptance testing must verify actual peak VRAM.
 
 Classification uses deterministic decoding, a short output limit, and no
 sampling. The existing prediction latency includes both the semantic check and
@@ -109,7 +112,8 @@ negative examples are rejected.
 
 ## Scope boundaries
 
-- No second Qwen model or validator service is introduced.
+- One official Qwen3.5-2B validator model is added to the existing worker; no
+  validator network service or container is introduced.
 - No model weights are changed or retrained in this change.
 - No TAMER behavior or Android model-selection UI is changed.
 - No changes are made to the primary local directory or GitHub until the user

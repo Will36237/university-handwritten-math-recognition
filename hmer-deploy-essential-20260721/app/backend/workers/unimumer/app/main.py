@@ -12,6 +12,8 @@ settings = UniMumerSettings.from_env(os.environ, WORKSPACE_ROOT)
 adapter = UniMumerLoraAdapter(
     base_model=settings.base_model,
     base_model_revision=settings.base_model_revision,
+    classifier_model=settings.classifier_model,
+    classifier_model_revision=settings.classifier_model_revision,
     adapter_path=settings.adapter_path,
 )
 spec = WorkerSpec(

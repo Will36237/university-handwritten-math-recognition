@@ -110,6 +110,8 @@ class UniMumerSettings:
     project_root: Path
     base_model: str
     base_model_revision: str
+    classifier_model: str
+    classifier_model_revision: str
     adapter_path: Path
     mode: str
     eager_load: bool
@@ -141,6 +143,14 @@ class UniMumerSettings:
             base_model_revision=source.get(
                 "HMER_UNIMUMER_BASE_MODEL_REVISION",
                 "40a6288292057f1c162b3b0eaccd362036dbd495",
+            ),
+            classifier_model=source.get(
+                "HMER_MATH_CLASSIFIER_MODEL",
+                "Qwen/Qwen3.5-2B",
+            ),
+            classifier_model_revision=source.get(
+                "HMER_MATH_CLASSIFIER_REVISION",
+                "15852e8c16360a2fea060d615a32b45270f8a8fc",
             ),
             adapter_path=Path(
                 source.get(

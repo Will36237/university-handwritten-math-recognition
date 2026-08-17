@@ -18,17 +18,13 @@ LATEX_RECOGNITION_PROMPT = (
 )
 
 MATH_IMAGE_CLASSIFICATION_PROMPT = (
-    "<|im_start|>system\n"
-    "You classify images for a mathematical-expression recognition system."
-    "<|im_end|>\n"
-    "<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>"
+    "You classify images for a mathematical-expression recognition system. "
     "Decide whether the main subject contains a visible mathematical expression. "
     "Accept handwritten math, printed math, and math displayed on a screen. "
     "Reject ordinary prose or handwriting, animals, objects, people, scenery, "
     "and screenshots without mathematical notation. Use UNCERTAIN when the image "
     "is too ambiguous or illegible. Reply with exactly one label: MATH, "
     "NON_MATH, or UNCERTAIN. Do not explain."
-    "<|im_end|>\n<|im_start|>assistant\n"
 )
 
 
@@ -54,20 +50,26 @@ class UniMumerLoraAdapter:
         self,
         base_model: str,
         base_model_revision: str,
+        classifier_model: str,
+        classifier_model_revision: str,
         adapter_path: Path,
     ) -> None:
         self.base_model = base_model
         self.base_model_revision = base_model_revision
+        self.classifier_model = classifier_model
+        self.classifier_model_revision = classifier_model_revision
         self.adapter_path = adapter_path.resolve()
         self._processor: Any = None
         self._model: Any = None
+        self._classifier_processor: Any = None
+        self._classifier_model: Any = None
         self._torch: Any = None
         self._lock = Lock()
         self.device = "unloaded"
 
     @property
     def loaded(self) -> bool:
-        return self._model is not None
+        return self._model is not None and self._classifier_model is not None
 
     def load(self) -> None:
         if self.loaded:
@@ -101,9 +103,26 @@ class UniMumerLoraAdapter:
             )
             model = PeftModel.from_pretrained(model, str(self.adapter_path))
             model.eval()
+
+            classifier_processor = AutoProcessor.from_pretrained(
+                self.classifier_model,
+                revision=self.classifier_model_revision,
+                trust_remote_code=True,
+            )
+            classifier_model = AutoModelForMultimodalLM.from_pretrained(
+                self.classifier_model,
+                device_map="auto" if torch.cuda.is_available() else None,
+                revision=self.classifier_model_revision,
+                trust_remote_code=True,
+                torch_dtype=dtype,
+            )
+            classifier_model.eval()
+
             self._torch = torch
             self._processor = processor
             self._model = model
+            self._classifier_processor = classifier_processor
+            self._classifier_model = classifier_model
             self.device = str(next(model.parameters()).device)
 
     def predict(self, image: Image.Image) -> str:
@@ -112,12 +131,12 @@ class UniMumerLoraAdapter:
         rgb = image.convert("RGB")
         with self._lock, torch.inference_mode():
             try:
-                with self._model.disable_adapter():
-                    classification = self._generate(
-                        MATH_IMAGE_CLASSIFICATION_PROMPT,
-                        rgb,
-                        max_new_tokens=8,
-                    )
+                classification = self._generate_classifier(
+                    self._classifier_processor,
+                    self._classifier_model,
+                    rgb,
+                    max_new_tokens=8,
+                )
             except RuntimeError as error:
                 raise ApiError(
                     503,
@@ -134,25 +153,75 @@ class UniMumerLoraAdapter:
                 )
 
             return self._generate(
+                self._processor,
+                self._model,
                 LATEX_RECOGNITION_PROMPT,
                 rgb,
                 max_new_tokens=256,
             )
 
+    def _generate_classifier(
+        self,
+        processor: Any,
+        model: Any,
+        image: Image.Image,
+        *,
+        max_new_tokens: int,
+    ) -> str:
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image", "image": image},
+                    {"type": "text", "text": MATH_IMAGE_CLASSIFICATION_PROMPT},
+                ],
+            },
+        ]
+        inputs = processor.apply_chat_template(
+            messages,
+            add_generation_prompt=True,
+            tokenize=True,
+            return_dict=True,
+            return_tensors="pt",
+        ).to(next(model.parameters()).device)
+        return self._decode_generation(
+            processor,
+            model,
+            inputs,
+            max_new_tokens=max_new_tokens,
+        )
+
     def _generate(
         self,
+        processor: Any,
+        model: Any,
         prompt: str,
         image: Image.Image,
         *,
         max_new_tokens: int,
     ) -> str:
-        inputs = self._processor(
+        inputs = processor(
             text=[prompt],
             images=[image],
             padding=True,
             return_tensors="pt",
-        ).to(next(self._model.parameters()).device)
-        outputs = self._model.generate(
+        ).to(next(model.parameters()).device)
+        return self._decode_generation(
+            processor,
+            model,
+            inputs,
+            max_new_tokens=max_new_tokens,
+        )
+
+    @staticmethod
+    def _decode_generation(
+        processor: Any,
+        model: Any,
+        inputs: Any,
+        *,
+        max_new_tokens: int,
+    ) -> str:
+        outputs = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
             do_sample=False,
@@ -163,7 +232,7 @@ class UniMumerLoraAdapter:
             output_ids[len(input_ids):]
             for input_ids, output_ids in zip(inputs.input_ids, outputs)
         ]
-        return self._processor.batch_decode(
+        return processor.batch_decode(
             generated_ids,
             skip_special_tokens=True,
             clean_up_tokenization_spaces=False,

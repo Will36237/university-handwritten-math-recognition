@@ -16,6 +16,9 @@ HF_CACHE_HOST_PATH="${HMER_HF_CACHE_HOST_PATH:-../../hf-cache}"
 PROJECT_ROOT="$(realpath -m "$BACKEND_ROOT/$PROJECT_HOST_PATH")"
 HF_CACHE_ROOT="$(realpath -m "$BACKEND_ROOT/$HF_CACHE_HOST_PATH")"
 HASH_MANIFEST="$BACKEND_ROOT/../CONTENTS_AND_HASHES.txt"
+MATH_CLASSIFIER_MODEL="${HMER_MATH_CLASSIFIER_MODEL:-Qwen/Qwen3.5-2B}"
+MATH_CLASSIFIER_REVISION="${HMER_MATH_CLASSIFIER_REVISION:-15852e8c16360a2fea060d615a32b45270f8a8fc}"
+MATH_CLASSIFIER_CACHE_KEY="${MATH_CLASSIFIER_MODEL//\//--}"
 
 required=(
   "$PROJECT_ROOT/tamer/lit_university.py"
@@ -24,6 +27,7 @@ required=(
   "$PROJECT_ROOT/outputs/unimumer_lora_unsloth_real/best_adapter/adapter_config.json"
   "$PROJECT_ROOT/outputs/unimumer_lora_unsloth_real/best_adapter/adapter_model.safetensors"
   "$HF_CACHE_ROOT/hub/models--phxember--Uni-MuMER-Qwen3.5-2B/snapshots/40a6288292057f1c162b3b0eaccd362036dbd495/model.safetensors"
+  "$HF_CACHE_ROOT/hub/models--${MATH_CLASSIFIER_CACHE_KEY}/snapshots/${MATH_CLASSIFIER_REVISION}/model.safetensors-00001-of-00001.safetensors"
 )
 
 for path in "${required[@]}"; do

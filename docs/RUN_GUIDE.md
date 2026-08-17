@@ -371,13 +371,26 @@ hmer-deploy-essential-20260721/
 │           └── unimumer_lora_unsloth_real/best_adapter/
 │               └── adapter_model.safetensors
 └── hf-cache/
-    └── hub/models--phxember--Uni-MuMER-Qwen3.5-2B/
-        └── snapshots/40a6288292057f1c162b3b0eaccd362036dbd495/
-            └── model.safetensors
+    └── hub/
+        ├── models--phxember--Uni-MuMER-Qwen3.5-2B/
+        │   └── snapshots/40a6288292057f1c162b3b0eaccd362036dbd495/
+        │       └── model.safetensors
+        └── models--Qwen--Qwen3.5-2B/
+            └── snapshots/15852e8c16360a2fea060d615a32b45270f8a8fc/
+                └── model.safetensors-00001-of-00001.safetensors
 ```
 
-Do not rename the pinned Uni-MuMER snapshot directory. The preflight also
-checks the tracked manifest at
+The official classifier can be placed in this cache before enabling offline mode:
+
+```bash
+hf download Qwen/Qwen3.5-2B \
+  --revision 15852e8c16360a2fea060d615a32b45270f8a8fc \
+  --cache-dir ./hf-cache
+```
+
+Run that command from the directory containing `hf-cache`, or change `--cache-dir`
+to its absolute path. Do not rename either pinned snapshot directory. The preflight
+also checks the tracked manifest at
 `hmer-deploy-essential-20260721/app/CONTENTS_AND_HASHES.txt`.
 
 ### 6.3 Preflight, build, and start

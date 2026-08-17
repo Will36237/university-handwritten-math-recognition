@@ -15,9 +15,19 @@ def test_default_host_paths_match_bundle_layout() -> None:
         "HMER_UNIMUMER_BASE_MODEL_REVISION="
         "40a6288292057f1c162b3b0eaccd362036dbd495"
     ) in env
+    assert "HMER_MATH_CLASSIFIER_MODEL=Qwen/Qwen3.5-2B" in env
+    assert (
+        "HMER_MATH_CLASSIFIER_REVISION="
+        "15852e8c16360a2fea060d615a32b45270f8a8fc"
+    ) in env
     assert "${HMER_PROJECT_HOST_PATH:-../hmer-project}" in compose
     assert "${HMER_HF_CACHE_HOST_PATH:-../../hf-cache}" in compose
     assert "${HMER_UNIMUMER_BASE_MODEL_REVISION:-40a6288292057f1c162b3b0eaccd362036dbd495}" in compose
+    assert "${HMER_MATH_CLASSIFIER_MODEL:-Qwen/Qwen3.5-2B}" in compose
+    assert (
+        "${HMER_MATH_CLASSIFIER_REVISION:-"
+        "15852e8c16360a2fea060d615a32b45270f8a8fc}"
+    ) in compose
 
 
 def test_gateway_is_bound_to_loopback_by_default() -> None:
@@ -35,6 +45,19 @@ def test_verifier_resolves_paths_from_backend_directory() -> None:
     assert 'HF_CACHE_HOST_PATH="${HMER_HF_CACHE_HOST_PATH:-../../hf-cache}"' in script
     assert 'HASH_MANIFEST="$BACKEND_ROOT/../CONTENTS_AND_HASHES.txt"' in script
     assert "sha256sum --check --strict" in script
+    assert (
+        'MATH_CLASSIFIER_MODEL="${HMER_MATH_CLASSIFIER_MODEL:-Qwen/Qwen3.5-2B}"'
+        in script
+    )
+    assert (
+        'MATH_CLASSIFIER_REVISION="${HMER_MATH_CLASSIFIER_REVISION:-'
+        '15852e8c16360a2fea060d615a32b45270f8a8fc}"'
+    ) in script
+    assert r'MATH_CLASSIFIER_CACHE_KEY="${MATH_CLASSIFIER_MODEL//\//--}"' in script
+    assert (
+        "models--${MATH_CLASSIFIER_CACHE_KEY}/snapshots/"
+        "${MATH_CLASSIFIER_REVISION}/model.safetensors-00001-of-00001.safetensors"
+    ) in script
 
 
 def test_unimumer_declares_matching_torchvision_runtime() -> None:
