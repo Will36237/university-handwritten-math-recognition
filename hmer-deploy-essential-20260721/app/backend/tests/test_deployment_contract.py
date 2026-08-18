@@ -5,6 +5,12 @@ BACKEND_ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY_ROOT = BACKEND_ROOT.parents[2]
 
 
+def test_example_environment_files_are_exported_with_lf_endings() -> None:
+    attributes = (REPOSITORY_ROOT / ".gitattributes").read_text(encoding="utf-8")
+
+    assert "*.example text eol=lf" in attributes
+
+
 def test_default_host_paths_match_bundle_layout() -> None:
     env = (BACKEND_ROOT / ".env.gpu.example").read_text(encoding="utf-8")
     compose = (BACKEND_ROOT / "docker-compose.gpu.yml").read_text(encoding="utf-8")
