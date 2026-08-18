@@ -385,12 +385,12 @@ The official classifier can be placed in this cache before enabling offline mode
 ```bash
 hf download Qwen/Qwen3.5-2B \
   --revision 15852e8c16360a2fea060d615a32b45270f8a8fc \
-  --cache-dir ./hf-cache
+  --cache-dir ./hf-cache/hub
 ```
 
-Run that command from the directory containing `hf-cache`, or change `--cache-dir`
-to its absolute path. Do not rename either pinned snapshot directory. The preflight
-also checks the tracked manifest at
+Run that command from the directory containing `hf-cache`, or change
+`--cache-dir` to the absolute path of its `hub` subdirectory. Do not rename either
+pinned snapshot directory. The preflight also checks the tracked manifest at
 `hmer-deploy-essential-20260721/app/CONTENTS_AND_HASHES.txt`.
 
 ### 6.3 Preflight, build, and start
