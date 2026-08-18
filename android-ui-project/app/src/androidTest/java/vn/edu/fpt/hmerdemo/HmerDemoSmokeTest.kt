@@ -26,8 +26,7 @@ class HmerDemoSmokeTest {
         composeRule.onNodeWithText("Ch\u1ee5p \u1ea3nh").assertIsDisplayed()
         composeRule.onNodeWithText("Th\u01b0 vi\u1ec7n").assertIsDisplayed()
         composeRule.onNodeWithText("D\u00f9ng \u1ea3nh m\u1eabu").assertIsDisplayed()
-        composeRule.onNodeWithText("Uni-MuMER").assertIsDisplayed()
-        composeRule.onAllNodesWithText("Uni-MuMER LoRA").assertCountEquals(1)
+        composeRule.onAllNodesWithText("Uni-MuMER LoRA").assertCountEquals(2)
         when (RecognitionModelMode.fromConfig(BuildConfig.HMER_MODEL_UI_MODE)) {
             RecognitionModelMode.UNI_ONLY -> {
                 composeRule.onAllNodesWithText("TAMER-A3").assertCountEquals(0)

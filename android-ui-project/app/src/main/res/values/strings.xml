@@ -27,7 +27,7 @@
     <string name="model_tamer_description">Mô hình HMER chuyên biệt, phù hợp tương tác gần thời gian thực.</string>
     <string name="model_tamer_stats" formatted="false">71,17% ExpRate  ·  2,92% TER  ·  ~0,31 s</string>
     <string name="model_unimumer_title">Uni-MuMER LoRA</string>
-    <string name="model_unimumer_action">Uni-MuMER</string>
+    <string name="model_unimumer_action">Uni-MuMER LoRA</string>
     <string name="model_unimumer_badge">EXACT MATCH</string>
     <string name="model_unimumer_description">Mô hình thị giác-ngôn ngữ được thích nghi trên dữ liệu lớp học thực tế.</string>
     <string name="model_unimumer_stats" formatted="false">74,82% ExpRate  ·  100% ValidLaTeX  ·  ~2,55 s</string>

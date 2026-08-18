@@ -29,7 +29,7 @@ class ModelControlsTest {
             )
         }
 
-        composeRule.onNodeWithText("Uni-MuMER").assertIsDisplayed().performClick()
+        composeRule.onNodeWithText("Uni-MuMER LoRA").assertIsDisplayed().performClick()
         composeRule.onAllNodesWithText("TAMER-A3").assertCountEquals(0)
         composeRule.onAllNodesWithText("So sánh models").assertCountEquals(0)
         composeRule.runOnIdle {
@@ -55,7 +55,7 @@ class ModelControlsTest {
         }
 
         composeRule.onNodeWithText("TAMER-A3").assertIsDisplayed().performClick()
-        composeRule.onNodeWithText("Uni-MuMER").assertIsDisplayed().performClick()
+        composeRule.onNodeWithText("Uni-MuMER LoRA").assertIsDisplayed().performClick()
         composeRule.onNodeWithText("So sánh models").assertIsDisplayed().performClick()
         composeRule.runOnIdle {
             assertEquals(1, tamerCalls)
